@@ -15,13 +15,7 @@ module.exports = function(grunt) {
 
   var yeomanConfig = {
     app       : 'app',
-    dist      : 'dist',
-    devServer : {
-      // what server you're deploying to
-      host : 'ukstrdev16.peroot.com',
-      // and where in the server
-      path : '/opt/efficacy_api/public/.'
-    }
+    dist      : 'dist'
   };
 
   grunt.initConfig({
@@ -378,28 +372,6 @@ module.exports = function(grunt) {
       },
       all     : {
         rjsConfig : '<%= yeoman.app %>/scripts/main.js'
-      }
-    },
-    shell         : {
-      deploy    : {
-        command : function() {
-          return 'scp -r dist/* davteam@' + yeomanConfig.devServer.host + ':' + yeomanConfig.devServer.path;
-        },
-        options : {
-          stdout      : true,
-          stderr      : true,
-          failOnError : true
-        }
-      },
-      devDeploy : {
-        command : function() {
-          return 'scp -r dist/* ' + yeomanConfig.devServer.host + ':' + yeomanConfig.devServer.path;
-        },
-        options : {
-          stdout      : true,
-          stderr      : true,
-          failOnError : true
-        }
       }
     }
   });

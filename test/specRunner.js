@@ -4,37 +4,37 @@
   'use strict';
 
   require.config({
-    baseUrl: 'scripts',
-    paths: {
-      spec: '../../spec',
-      templates: '../templates',
-      jquery: '../components/jquery/jquery',
-      underscore: '../components/underscore/underscore',
-      bootstrap: 'vendor/bootstrap',
-      backbone: '../components/backbone/backbone',
-      layoutmanager: '../components/layoutmanager/backbone.layoutmanager',
-      associations: '../components/backbone-associations/backbone-associations',
-      text: '../components/requirejs-plugins/lib/text',
-      json: '../components/requirejs-plugins/src/json',
-      handlebars: '../components/handlebars/handlebars'
+    baseUrl : 'scripts',
+    paths   : {
+      spec          : '../../spec',
+      templates     : '../templates',
+      jquery        : '../components/jquery/jquery',
+      underscore    : '../components/underscore/underscore',
+      bootstrap     : '../components/sass-bootstrap/dist/js/bootstrap',
+      backbone      : '../components/backbone/backbone',
+      layoutmanager : '../components/layoutmanager/backbone.layoutmanager',
+      associations  : '../components/backbone-associations/backbone-associations',
+      text          : '../components/requirejs-plugins/lib/text',
+      json          : '../components/requirejs-plugins/src/json',
+      handlebars    : '../components/handlebars/handlebars'
     },
-    shim: {
-      bootstrap: ['jquery'],
-      backbone: {
-        deps: ['underscore', 'jquery'],
-        exports: 'Backbone'
+    shim    : {
+      bootstrap     : ['jquery'],
+      backbone      : {
+        deps    : ['underscore', 'jquery'],
+        exports : 'Backbone'
       },
-      associations: {
-        deps: ['backbone']
+      associations  : {
+        deps : ['backbone']
       },
-      underscore: {
-        exports: '_'
+      underscore    : {
+        exports : '_'
       },
-      layoutmanager: {
-        deps: ['backbone']
+      layoutmanager : {
+        deps : ['backbone']
       },
-      handlebars: {
-        exports: 'Handlebars'
+      handlebars    : {
+        exports : 'Handlebars'
       }
     }
   });
@@ -45,9 +45,9 @@
     app.templates = {};
 
     Backbone.Layout.configure({
-      manage: true,
-      prefix: 'templates/',
-      fetch: function(path) {
+      manage : true,
+      prefix : 'templates/',
+      fetch  : function(path) {
         var lmdone;
         path += '.hbs';
         if (app.templates.hasOwnProperty('path') && typeof app.templates[path] !== 'undefined') {
@@ -92,7 +92,8 @@
 
           var aArgs = Array.prototype.slice.call(arguments, 1);
           var fToBind = this;
-          var F = function() {};
+          var F = function() {
+          };
           var fBound = function() {
             return fToBind.apply(
               this instanceof F && oThis ? this : oThis,

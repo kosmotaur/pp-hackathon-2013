@@ -1,0 +1,19 @@
+{
+  "name": "PROJECT_NAME",
+  "version": "0.0.0",
+  "dependencies": {
+    "sass-bootstrap": "~3.0.0",
+    "requirejs": "~2.1.4",
+    "jquery": "~2.0.3",
+    "layoutmanager": "~0.8.8",
+    "requirejs-plugins": "~1.0.2",
+    "handlebars": "~1.0.0",
+    "backbone": "~1.1",
+    "backbone-associations": "~0.5.3"
+  },
+  "devDependencies" : {
+    "sinon" : "http://sinonjs.org/releases/sinon-1.7.3.js",
+    "mocha" : "~1.1.0",
+    "chai"  : "~1.7.2"
+  }
+}

@@ -1,8 +1,9 @@
 define [
+  'layouts/AppLayout'
   'backbone'
-], ->
+], (AppLayout) ->
   class AppRouter extends Backbone.Router
     routes :
       '' : 'index'
     index  : ->
-      # building initial view goes here
+      new AppLayout()

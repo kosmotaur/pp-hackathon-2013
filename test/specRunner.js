@@ -9,18 +9,13 @@
       spec: '../../spec',
       templates: '../templates',
       jquery: '../components/jquery/jquery',
-      vendor: 'vendor',
       underscore: '../components/underscore/underscore',
       bootstrap: 'vendor/bootstrap',
       backbone: '../components/backbone/backbone',
-      bridle: '../components/bridle/dist/bridle',
       layoutmanager: '../components/layoutmanager/backbone.layoutmanager',
       associations: '../components/backbone-associations/backbone-associations',
-      spinner: '../components/spin.js/spin',
-      throbber: 'common/throbber',
       text: '../components/requirejs-plugins/lib/text',
       json: '../components/requirejs-plugins/src/json',
-      data: '../data',
       handlebars: '../components/handlebars/handlebars'
     },
     shim: {
@@ -40,13 +35,6 @@
       },
       handlebars: {
         exports: 'Handlebars'
-      },
-      bridle: {
-        deps: ['d3'],
-        exports: 'Bridle'
-      },
-      spinner: {
-        exports: 'Spinner'
       }
     }
   });
@@ -126,11 +114,7 @@
       delete this.oldFnBind;
     });
 
-    // Require tests here
-    require([
-      'spec/query',
-      'spec/appModel'
-    ], function() {
+    require([/* Require tests here */], function() {
       mocha.run();
     });
   });

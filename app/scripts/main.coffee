@@ -9,6 +9,7 @@ require.config
     text          : '../components/requirejs-plugins/lib/text'
     json          : '../components/requirejs-plugins/src/json'
     associations  : '../components/backbone-associations/backbone-associations'
+    three         : '../components/threejs/build/three'
     templates     : '../templates'
   shim  :
     bootstrap     : ['jquery']

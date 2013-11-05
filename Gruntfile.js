@@ -51,7 +51,7 @@ module.exports = function(grunt) {
           // assets, like images
           '<%= yeoman.app %>/img/{,*/}*.{png,gif,jpg,jpeg,webp}',
           // compiled css
-          '.tmp/styles/{,*/}*.css',
+//          '.tmp/styles/{,*/}*.css',
           // tests
           'test/{,*/}*.{js,html}',
           // compiled coffeescript

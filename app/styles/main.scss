@@ -1,6 +1,15 @@
 // Twitter Bootstrap Glyphicons path
-$icon-font-path: "fonts/";
+$icon-font-path: 'fonts/';
 
 @import 'sass-bootstrap/lib/bootstrap';
-@import "compass";
+@import 'compass';
+@import 'nvd3';
 
+body {
+  background : #efefef;
+  font-size: 1.2vw;
+}
+
+main {
+  padding: 20px;
+}

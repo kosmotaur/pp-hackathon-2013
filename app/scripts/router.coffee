@@ -1,9 +1,14 @@
 define [
+  'app'
   'layouts/AppLayout'
   'backbone'
-], (AppLayout) ->
+], (
+  app,
+  AppLayout
+) ->
   class AppRouter extends Backbone.Router
     routes :
       '' : 'index'
     index  : ->
-      new AppLayout()
+      app.promise.then ->
+        new AppLayout

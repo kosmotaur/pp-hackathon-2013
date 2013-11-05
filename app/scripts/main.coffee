@@ -10,6 +10,7 @@ require.config
     json          : '../components/requirejs-plugins/src/json'
     associations  : '../components/backbone-associations/backbone-associations'
     three         : '../components/threejs/build/three'
+    nvd3          : '../components/nvd3/nv.d3'
     templates     : '../templates'
   shim  :
     bootstrap     : ['jquery']
@@ -25,10 +26,31 @@ require.config
     handlebars    :
       exports : 'Handlebars'
 
-require ['app', 'router', 'handlebars', 'layoutmanager', 'bootstrap'], (app, Router, Handlebars) ->
+require [
+  'app',
+  'router',
+  'collections/Events'
+  'collections/Avatars'
+  'collections/Languages'
+  'handlebars',
+  'layoutmanager',
+  'bootstrap'
+], (
+  app,
+  Router,
+  EventsCollection,
+  AvatarsCollection,
+  LanguagesCollection,
+  Handlebars
+) ->
   app.router = new Router()
 
   app.templates = {}
+  app.collections = {}
+  app.promise.then ->
+    app.collections.Events = new EventsCollection socket : app.sockets.types
+    app.collections.Avatars = new AvatarsCollection socket : app.sockets.avatars
+    app.collections.Languages = new LanguagesCollection socket : app.sockets.langs
 
   Backbone.Layout.configure
     manage : true

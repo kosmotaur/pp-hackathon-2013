@@ -48,9 +48,9 @@ require [
   app.templates = {}
   app.collections = {}
   app.promise.then ->
-    app.collections.Events = new EventsCollection socket : app.sockets.types
-    app.collections.Avatars = new AvatarsCollection socket : app.sockets.avatars
-    app.collections.Languages = new LanguagesCollection socket : app.sockets.langs
+    app.collections.events = new EventsCollection socket : app.sockets.types
+    app.collections.avatars = new AvatarsCollection socket : app.sockets.avatars
+    app.collections.languages = new LanguagesCollection socket : app.sockets.langs
 
   Backbone.Layout.configure
     manage : true

@@ -14,8 +14,8 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   var yeomanConfig = {
-    app       : 'app',
-    dist      : 'dist'
+    app  : 'app',
+    dist : 'dist'
   };
 
   grunt.initConfig({
@@ -23,8 +23,8 @@ module.exports = function(grunt) {
     watch         : {
       // compile the coffeescript, test it
       coffee     : {
-        files   : ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-        tasks   : ['coffee:dist', 'mocha']
+        files : ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
+        tasks : ['coffee:dist', 'mocha']
       },
       // JSHint the Gruntfile itself
       gruntfile  : {
@@ -34,18 +34,18 @@ module.exports = function(grunt) {
         tasks : ['jshint:gruntfile']
       },
       // compile scss through compass
-      scss    : {
-        files   : ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks   : ['compass:server']
+      scss       : {
+        files : ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks : ['compass:server']
       },
       // run the tests
       test       : {
-        files   : ['test/{,*/}*.{js,html}'],
-        tasks   : ['jshint:test', 'mocha']
+        files : ['test/{,*/}*.{js,html}'],
+        tasks : ['jshint:test', 'mocha']
       },
       //
       livereload : {
-        files : [
+        files   : [
           // basically only the application's index.html
           '<%= yeoman.app %>/*.html',
           // assets, like images
@@ -85,6 +85,7 @@ module.exports = function(grunt) {
         options : {
           middleware : function(connect) {
             return [
+              require('connect-livereload')(),
               mountFolder(connect, '.tmp'),
               mountFolder(connect, 'test'),
               mountFolder(connect, 'app')
@@ -131,7 +132,7 @@ module.exports = function(grunt) {
         options : {
           jshintrc : 'test/.jshintrc'
         },
-        files    : {
+        files   : {
           src : ['test/spec/{,*/}*.js']
         }
       },
@@ -139,7 +140,7 @@ module.exports = function(grunt) {
         options : {
           jshintrc : '.jshintrc'
         },
-        files : {
+        files   : {
           src : ['Gruntfile.js']
         }
       }

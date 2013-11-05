@@ -5,6 +5,6 @@ define ['associations'], ->
       @socket.onmessage = @onSocketMessage.bind @
 
     onSocketMessage : (e) ->
-      @add e.data unless e.data is "EMPTY"
+      @add e.data, {at : 0} unless e.data is "EMPTY"
       if @size() > 30
         @shift()

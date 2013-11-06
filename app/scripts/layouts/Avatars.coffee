@@ -11,7 +11,9 @@ define ['views/Avatar', 'layoutmanager'], (AvatarView) ->
       newView.render().done =>
         img = newView.$('img')
         img.load =>
+          console.log(img[0].clientWidth)
           @$('ul').prepend newView.el
+
     removeOne : (model) ->
       oldView = @$('li').filter ->
         $(@).data('cid') is model.cid

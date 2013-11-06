@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-12">
         <span class="lbl repo">Repository:</span>
-        <span class="value repo">{{repo}}</span>
+        <span class="value repo"><a href="http://github.com/{{repo}}">{{repo}}</a></span>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
   </div>
   <div class="col-md-3">
     <span class="lbl">Actual language:</span>
-    <span class="language value">{{lang}}</span>
+    <span class="language value">{{original_lang}}</span>
   </div>
 </div>
 <div class="accuracy"><span class="glyphicon glyphicon-{{#if hit}}ok{{else}}remove{{/if}}"></span></div>

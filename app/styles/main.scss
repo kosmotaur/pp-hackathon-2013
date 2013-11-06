@@ -31,6 +31,9 @@ body {
     padding-top: .3em;
     color: $tone3;
   }
+  img {
+    max-height: 80px;
+  }
 }
 
 .main-col,
@@ -68,6 +71,10 @@ body {
   .events {
     top: 50%;
     bottom: 0;
+    .nv-x .tick text {
+      display: none;
+      opacity: 0;
+    }
   }
 }
 

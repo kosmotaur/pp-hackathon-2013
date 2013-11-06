@@ -1,8 +1,10 @@
 define ['layoutmanager'], ->
   class AvatarView extends Backbone.Layout
     template  : 'views/avatar'
-    el        : 'li'
+    tagName   : 'li'
     serialize : ->
-      @model.toJSON()
-    append    : (root, child) ->
-      $(root).prepend child
+      data = @model.toJSON()
+      data.hit = data.predicted_lang is data.lang
+      data
+    beforeRender : ->
+      @$el.data cid : @model.cid

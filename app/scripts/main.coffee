@@ -11,8 +11,9 @@ require.config
     associations  : '../components/backbone-associations/backbone-associations'
     three         : '../components/threejs/build/three'
     nvd3          : '../components/nvd3/nv.d3'
+    d3            : '../components/d3/d3'
     templates     : '../templates'
-  shim  :
+  shim :
     bootstrap     : ['jquery']
     backbone      :
       deps    : ['underscore', 'jquery']
@@ -25,7 +26,11 @@ require.config
       deps : ['backbone']
     handlebars    :
       exports : 'Handlebars'
-
+    d3            :
+      exports : 'd3'
+    nvd3          :
+      deps    : ['d3']
+      exports : 'nv'
 require [
   'app',
   'router',
@@ -48,9 +53,9 @@ require [
   app.templates = {}
   app.collections = {}
   app.promise.then ->
-    app.collections.events = new EventsCollection socket : app.sockets.types
-    app.collections.avatars = new AvatarsCollection socket : app.sockets.avatars
-    app.collections.languages = new LanguagesCollection socket : app.sockets.langs
+    app.collections.events = new EventsCollection [], socket : app.sockets.types
+    app.collections.avatars = new AvatarsCollection [], socket : app.sockets.avatars
+    app.collections.languages = new LanguagesCollection [], socket : app.sockets.langs
 
   Backbone.Layout.configure
     manage : true

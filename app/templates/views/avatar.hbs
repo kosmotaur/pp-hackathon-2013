@@ -1,1 +1,25 @@
-<li>avatar!</li>
+<div class="row{{#if hit}} hit{{else}} miss{{/if}}">
+  <div class="col-md-2"><img src="{{avatar}}"/></div>
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-12">
+        <span class="value user">{{user}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <span class="lbl repo">Repository:</span>
+        <span class="value repo">{{repo}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <span class="lbl">Predicted language:</span>
+    <span class="language value">{{predicted_lang}}</span>
+  </div>
+  <div class="col-md-3">
+    <span class="lbl">Actual language:</span>
+    <span class="language value">{{lang}}</span>
+  </div>
+</div>
+<div class="accuracy"><span class="glyphicon glyphicon-{{#if hit}}ok{{else}}remove{{/if}}"></span></div>

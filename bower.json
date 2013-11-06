@@ -10,7 +10,8 @@
     "handlebars": "~1.0.0",
     "backbone": "~1.1",
     "backbone-associations": "~0.5.3",
-    "nvd3": "~1.1.14-beta"
+    "nvd3": "~1.1.14-beta",
+    "d3": "~3.3.9"
   },
   "devDependencies": {
     "sinon": "http://sinonjs.org/releases/sinon-1.7.3.js",
